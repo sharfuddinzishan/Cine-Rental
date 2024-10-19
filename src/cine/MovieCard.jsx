@@ -6,7 +6,6 @@ const MovieCard = ({ movie }) => {
   const { price, cover, rating, genre, description, title, id } = movie || {};
   return (
     <>
-      {" "}
       <figure className="rounded-xl border border-black/10 p-4 shadow-sm dark:border-white/10">
         <img
           className="w-full object-cover"
