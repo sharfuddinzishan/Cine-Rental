@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
+import { toast } from "react-toastify";
 import Tag from "../assets/tag.svg";
 import { MovieContext } from "../context";
 import { getImgUrl } from "../utils/cine-utils";
@@ -31,8 +32,14 @@ const MovieCard = ({ movie }) => {
           ...movie,
         },
       });
+
+      toast.success(`Movie ${movie.title} added successfully`, {
+        position: "bottom-right",
+      });
     } else {
-      alert("Movie Already Added To The Cart");
+      toast.error(`Movie ${movie.title} has been added to cart already!`, {
+        position: "bottom-right",
+      });
     }
   }
   return (
