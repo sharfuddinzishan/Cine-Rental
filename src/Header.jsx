@@ -8,7 +8,7 @@ import CartDetails from "./cine/CartDetails";
 import { MovieContext, ThemeContext } from "./context";
 const Header = () => {
   const [showCart, setShowCart] = useState(false);
-  const { cartData } = useContext(MovieContext);
+  const { state } = useContext(MovieContext);
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   function handleCartShow() {
     setShowCart(true);
@@ -54,9 +54,9 @@ const Header = () => {
                 onClick={handleCartShow}
               >
                 <img src={Cart} width="24" height="24" alt="" />
-                {cartData?.length > 0 && (
+                {state.cartData?.length > 0 && (
                   <span className="absolute left-[20px] top-[-12px] h-[24px] w-[24px] rounded-full bg-[#12CF6F] text-center text-white">
-                    {cartData.length}
+                    {state.cartData.length}
                   </span>
                 )}
               </a>
