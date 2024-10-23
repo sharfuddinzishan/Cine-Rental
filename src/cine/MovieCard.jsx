@@ -64,14 +64,14 @@ const MovieCard = ({ movie }) => {
             <div className="mb-5 flex items-center space-x-1">
               <Rating value={rating}></Rating>
             </div>
-            <a
+            <button
               className="flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-[#171923]"
               href="#"
               onClick={(e) => handleAddToCart(e, movie)}
             >
               <img src={Tag} alt="Tag" />
               <span>${price} | Add to Cart</span>
-            </a>
+            </button>
           </figcaption>
         </a>
       </figure>
